@@ -138,4 +138,8 @@ local colorscheme = function()
 	highlight()
 end
 
-return { colorscheme = colorscheme }
+local ibl_setup = function()
+	vim.api.nvim_set_hl(0, "Indent", { fg = "#000000" })
+end
+
+return { colorscheme = colorscheme, ibl_setup = ibl_setup }
