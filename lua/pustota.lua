@@ -134,6 +134,7 @@ end
 local colorscheme = function()
 	vim.api.nvim_command("hi clear")
 	vim.o.termguicolors = true
+	vim.g.colors_name = "pustota"
 	highlight()
 end
 
