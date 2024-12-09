@@ -77,7 +77,7 @@ M.hl_langs = function()
 
 	-- Treesitter class
 	hl(0, "@type", {})
-	hl(0, "@type.definition", { link = "Type" })
+	hl(0, "@type.definition", {})
 
 	-- Treesitter string
 	hl(0, "@string.escape", { link = "String" })
