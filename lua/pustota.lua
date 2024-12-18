@@ -107,8 +107,8 @@ M.hl_langs = function()
 end
 
 M.hl_lsp = function()
-	hl(0, "DiagnosticError", { fg = colors.error })
-	hl(0, "DiagnosticUnderlineError", { undercurl = true })
+	hl(0, "DiagnosticError", { fg = colors.blue })
+	hl(0, "LspDiagnosticsUnderlineError", { undercurl = true, sp = colors.error })
 end
 
 M.hl_plugins = function()
