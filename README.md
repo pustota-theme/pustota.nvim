@@ -9,6 +9,8 @@ All languages supported, but tested only on:
 
 - Python
 - Lua
+- Dockerfile
+- YAML
 - tbd...
 
 Experience may differ from original theme for other languages
