@@ -20,16 +20,7 @@ Experience may differ from original theme for other languages
 
 lazy.nvim
 ```lua
-{ "igor-gorohovsky/pustota.nvim", dependencies = {"nvim-treesitter/nvim-treesitter"} }
-```
-mini.deps
-```lua
-add({ source = "igor-gorohovsky/pustota.nvim", depends = {"nvim-treesitter/nvim-treesitter"})
-```
-
-packer.nvim
-```lua
-use({"igor-gorohovsky/pustota.nvim", requires = {"nvim-treesitter/nvim-treesitter"})
+{ "igor-gorohovsky/pustota.nvim", version = "*", dependencies = {"nvim-treesitter/nvim-treesitter"} }
 ```
 
 ## Usage
