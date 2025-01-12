@@ -1,15 +1,16 @@
 local hl = vim.api.nvim_set_hl
 
 local colors = {
+	constant = "#E6B450",
+	function_definitions = "#FFB454",
+	keywords_and_operators = "#FF8F40",
+	type_definitions = "#59C2FF",
+	comment = "#626A73",
+	string = "#C2D94C",
+
 	black = "#0A0E14",
 	gray = "#B3B1AD",
 	lgray = "#B9B9B9",
-	yellow = "#E6B450",
-	orange = "#FFB454",
-	red = "#FF8F40",
-	blue = "#59C2FF",
-	comment = "#626A73",
-	string = "#C2D94C",
 	error = "#B10102",
 	indent = "#181A1D",
 	visual = "#1C2631",
@@ -26,21 +27,21 @@ M.hl_base = function()
 	hl(0, "String", { fg = colors.string })
 	hl(0, "Character", { fg = colors.string })
 
-	hl(0, "Constant", { fg = colors.yellow })
+	hl(0, "Constant", { fg = colors.constant })
 	hl(0, "Special", {})
 
-	hl(0, "Function", { fg = colors.orange })
+	hl(0, "Function", { fg = colors.function_definitions })
 
-	hl(0, "Operator", { fg = colors.red })
-	hl(0, "Keyword", { fg = colors.red })
-	hl(0, "Exception", { fg = colors.red })
-	hl(0, "Conditional", { fg = colors.red })
-	hl(0, "Label", { fg = colors.red })
-	hl(0, "Repeat", { fg = colors.red })
-	hl(0, "Statement", { fg = colors.red })
+	hl(0, "Operator", { fg = colors.keywords_and_operators })
+	hl(0, "Keyword", { fg = colors.keywords_and_operators })
+	hl(0, "Exception", { fg = colors.keywords_and_operators })
+	hl(0, "Conditional", { fg = colors.keywords_and_operators })
+	hl(0, "Label", { fg = colors.keywords_and_operators })
+	hl(0, "Repeat", { fg = colors.keywords_and_operators })
+	hl(0, "Statement", { fg = colors.keywords_and_operators })
 	hl(0, "Bracket", {})
 
-	hl(0, "Type", { fg = colors.blue })
+	hl(0, "Type", { fg = colors.type_definitions })
 
 	hl(0, "CursorLine", { bg = colors.line })
 	hl(0, "Visual", { bg = colors.visual })
@@ -107,22 +108,23 @@ M.hl_langs = function()
 end
 
 M.hl_lsp = function()
-	hl(0, "DiagnosticError", { fg = colors.blue })
-	hl(0, "LspDiagnosticsUnderlineError", { undercurl = true, sp = colors.error })
+	hl(0, "DiagnosticUnderlineError", { undercurl = true, sp = colors.error })
+	hl(0, "DiagnosticUnderlineWarning", { undercurl = true })
+	hl(0, "DiagnosticUnderlineWarning", { undercurl = true })
 end
 
 M.hl_plugins = function()
 	-- NeoTree
 	hl(0, "NeoTreeDirectoryName", { fg = colors.gray })
-	hl(0, "NeoTreeDirectoryIcon", { fg = colors.blue })
-	hl(0, "NeoTreeGitModified", { fg = colors.red })
+	hl(0, "NeoTreeDirectoryIcon", { fg = colors.type_definitions })
+	hl(0, "NeoTreeGitModified", { fg = colors.keywords_and_operators })
 	hl(0, "NeoTreeTitleBar", { fg = colors.gray })
-	hl(0, "NeoTreeCursorLine", { fg = colors.yellow })
+	hl(0, "NeoTreeCursorLine", { fg = colors.constant })
 
 	-- Telescope
-	hl(0, "TelescopeMultiSelection", { fg = colors.yellow })
-	hl(0, "TelescopeResultsMethod", { fg = colors.orange })
-	hl(0, "TelescopeResultsClass", { fg = colors.blue })
+	hl(0, "TelescopeMultiSelection", { fg = colors.constant })
+	hl(0, "TelescopeResultsMethod", { fg = colors.function_definitions })
+	hl(0, "TelescopeResultsClass", { fg = colors.type_definitions })
 end
 
 local highlight = function()
