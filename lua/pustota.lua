@@ -55,6 +55,7 @@ M.hl_langs = function()
 	-- Treesitter Functions
 	hl(0, "@function.call", {})
 	hl(0, "@function.method.call", {})
+	hl(0, "@function.macro", {})
 	hl(0, "@constructor", {})
 
 	-- Treesitter brackets
@@ -95,6 +96,10 @@ M.hl_langs = function()
 	hl(0, "@attribute.python", {})
 	hl(0, "@type.definition.python", { link = "Type" })
 	hl(0, "@NonePy.python", { link = "Constant" })
+
+	-- Rust specific
+	hl(0, "@keyword.modifier.rust", {})
+	hl(0, "@attribute.rust", {})
 
 	-- Bash specific
 	hl(0, "@variable.parameter.bash", { link = "String" })

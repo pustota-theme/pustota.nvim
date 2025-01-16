@@ -9,6 +9,7 @@ All languages supported, but tested only on:
 
 - Python
 - Lua
+- Rust
 - Dockerfile
 - YAML
 - tbd...
