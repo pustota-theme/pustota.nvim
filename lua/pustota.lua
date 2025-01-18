@@ -11,10 +11,8 @@ local colors = {
 	black = "#0A0E14",
 	gray = "#B3B1AD",
 	lgray = "#B9B9B9",
-	error = "#B10102",
 	indent = "#181A1D",
 	visual = "#1C2631",
-	line = "#1E2024",
 }
 
 local M = {}
@@ -43,7 +41,6 @@ M.hl_base = function()
 
 	hl(0, "Type", { fg = colors.type_definitions })
 
-	hl(0, "CursorLine", { bg = colors.line })
 	hl(0, "Visual", { bg = colors.visual })
 	hl(0, "Indent", { fg = colors.indent })
 end
@@ -112,20 +109,7 @@ M.hl_langs = function()
 	hl(0, "@property.dockerfile", {})
 end
 
-M.hl_lsp = function()
-	hl(0, "DiagnosticUnderlineError", { undercurl = true, sp = colors.error })
-	hl(0, "DiagnosticUnderlineWarning", { undercurl = true })
-	hl(0, "DiagnosticUnderlineWarning", { undercurl = true })
-end
-
 M.hl_plugins = function()
-	-- NeoTree
-	hl(0, "NeoTreeDirectoryName", { fg = colors.gray })
-	hl(0, "NeoTreeDirectoryIcon", { fg = colors.type_definitions })
-	hl(0, "NeoTreeGitModified", { fg = colors.keywords_and_operators })
-	hl(0, "NeoTreeTitleBar", { fg = colors.gray })
-	hl(0, "NeoTreeCursorLine", { fg = colors.constant })
-
 	-- Telescope
 	hl(0, "TelescopeMultiSelection", { fg = colors.constant })
 	hl(0, "TelescopeResultsMethod", { fg = colors.function_definitions })
