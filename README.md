@@ -25,6 +25,29 @@ lazy.nvim
 { "igor-gorohovsky/pustota.nvim", version = "*", dependencies = {"nvim-treesitter/nvim-treesitter"} }
 ```
 
+## Configuration
+Recommended but not required `indent-blankline.nvim` config:
+
+```lua
+return {
+	{
+		"lukas-reineke/indent-blankline.nvim",
+		main = "ibl",
+		opts = {
+			indent = {
+				char = "▏",
+				highlight = "Indent",
+			},
+		},
+		config = function(_, opts)
+			require("pustota").ibl_setup()
+			require("ibl").setup(opts)
+		end,
+	},
+}
+
+```
+
 ## Usage
 ```vim
 colorscheme pustota
