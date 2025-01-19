@@ -119,13 +119,6 @@ M.hl_langs = function()
 	hl(0, "@string.special.elixir", { fg = colors.gray })
 end
 
-M.hl_plugins = function()
-	-- Telescope
-	hl(0, "TelescopeMultiSelection", { fg = colors.constant })
-	hl(0, "TelescopeResultsMethod", { fg = colors.function_definitions })
-	hl(0, "TelescopeResultsClass", { fg = colors.type_definitions })
-end
-
 local highlight = function()
 	for _, v in pairs(M) do
 		v()
