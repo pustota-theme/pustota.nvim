@@ -30,20 +30,20 @@ Recommended but not required `indent-blankline.nvim` config:
 
 ```lua
 return {
-	{
-		"lukas-reineke/indent-blankline.nvim",
-		main = "ibl",
-		opts = {
-			indent = {
-				char = "▏",
-				highlight = "Indent",
-			},
-		},
-		config = function(_, opts)
-			require("pustota").ibl_setup()
-			require("ibl").setup(opts)
-		end,
-	},
+    {
+        "lukas-reineke/indent-blankline.nvim",
+        main = "ibl",
+        opts = {
+            indent = {
+                char = "▏",
+                highlight = "Indent",
+            },
+        },
+        config = function(_, opts)
+            require("pustota").ibl_setup()
+            require("ibl").setup(opts)
+        end,
+    },
 }
 
 ```
