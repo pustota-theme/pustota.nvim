@@ -107,6 +107,14 @@ M.hl_langs = function()
 	-- Yaml specific
 	hl(0, "@property.yaml", { link = "Keyword" })
 	hl(0, "@property.dockerfile", {})
+
+	-- Elixir specific
+	hl(0, "@module.definition.elixir", { link = "Type" })
+	hl(0, "@impl.keyword.elixir", { link = "Operator" })
+	hl(0, "@keyword.do.elixir", { link = "Operator" })
+	hl(0, "@dot.elixir", { fg = colors.gray })
+	hl(0, "@constant.builtin.elixir", { link = "Constant" })
+	hl(0, "@string.special.elixir", { fg = colors.gray })
 end
 
 M.hl_plugins = function()
