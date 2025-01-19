@@ -26,7 +26,7 @@ M.hl_base = function()
 	hl(0, "Character", { fg = colors.string })
 
 	hl(0, "Constant", { fg = colors.constant })
-	hl(0, "Special", {})
+	hl(0, "Special", { fg = colors.gray })
 
 	hl(0, "Function", { fg = colors.function_definitions })
 
@@ -37,7 +37,7 @@ M.hl_base = function()
 	hl(0, "Label", { fg = colors.keywords_and_operators })
 	hl(0, "Repeat", { fg = colors.keywords_and_operators })
 	hl(0, "Statement", { fg = colors.keywords_and_operators })
-	hl(0, "Bracket", {})
+	hl(0, "Bracket", { fg = colors.gray })
 
 	hl(0, "Type", { fg = colors.type_definitions })
 
@@ -50,10 +50,10 @@ M.hl_langs = function()
 	hl(0, "@interpolation", { fg = colors.gray })
 
 	-- Treesitter Functions
-	hl(0, "@function.call", {})
-	hl(0, "@function.method.call", {})
-	hl(0, "@function.macro", {})
-	hl(0, "@constructor", {})
+	hl(0, "@function.call", { fg = colors.gray })
+	hl(0, "@function.method.call", { fg = colors.gray })
+	hl(0, "@function.macro", { fg = colors.gray })
+	hl(0, "@constructor", { fg = colors.gray })
 
 	-- Treesitter brackets
 	hl(0, "@punctuation.bracket", { link = "Bracket" })
@@ -61,29 +61,29 @@ M.hl_langs = function()
 	hl(0, "@punctuation.special", { link = "Bracket" })
 
 	-- Treesitter variables
-	hl(0, "@variable", {})
-	hl(0, "@variable.parameter", {})
-	hl(0, "@variable.builtin", {})
-	hl(0, "@variable.member", {})
+	hl(0, "@variable", { fg = colors.gray })
+	hl(0, "@variable.parameter", { fg = colors.gray })
+	hl(0, "@variable.builtin", { fg = colors.gray })
+	hl(0, "@variable.member", { fg = colors.gray })
 
 	-- Treesitter modules
-	hl(0, "@module", {})
-	hl(0, "@module.builtin", {})
+	hl(0, "@module", { fg = colors.gray })
+	hl(0, "@module.builtin", { fg = colors.gray })
 
 	-- Treesitter const
-	hl(0, "@constant", {})
-	hl(0, "@constant.builtin", {})
+	hl(0, "@constant", { fg = colors.gray })
+	hl(0, "@constant.builtin", { fg = colors.gray })
 
 	-- Treesitter class
-	hl(0, "@type", {})
-	hl(0, "@type.definition", {})
+	hl(0, "@type", { fg = colors.gray })
+	hl(0, "@type.definition", { fg = colors.gray })
 
 	-- Treesitter string
 	hl(0, "@string.escape", { link = "String" })
 
 	-- Lua specific
-	hl(0, "@variable.lua", {})
-	hl(0, "@property.lua", {})
+	hl(0, "@variable.lua", { fg = colors.gray })
+	hl(0, "@property.lua", { fg = colors.gray })
 	hl(0, "@constructor.lua", { link = "Bracket" })
 	hl(0, "luaTable", { link = "Bracket" })
 	hl(0, "luaParen", { link = "Bracket" })
@@ -95,8 +95,10 @@ M.hl_langs = function()
 	hl(0, "@NonePy.python", { link = "Constant" })
 
 	-- Rust specific
-	hl(0, "@keyword.modifier.rust", {})
-	hl(0, "@attribute.rust", {})
+	hl(0, "@keyword.modifier.rust", { fg = colors.gray })
+	hl(0, "@attribute.rust", { fg = colors.gray })
+	hl(0, "@punctuation.special.rust", { link = "Operator" })
+	hl(0, "@type.definition.rust", { link = "Type" })
 
 	-- Bash specific
 	hl(0, "@variable.parameter.bash", { link = "String" })

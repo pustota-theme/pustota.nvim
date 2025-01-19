@@ -12,7 +12,7 @@ defprotocol DemoProtocol do
 end
 
 defimpl DemoProtocol, for: Integer do
-  def to_string(i), do: "Integer(#{i})"
+  def to_string(i), do: "Integer(#{IO.puts 1})"
 end
 
 defimpl DemoProtocol, for: BitString do
