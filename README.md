@@ -1,32 +1,31 @@
 # pustota.nvim
 
-**pustota.nvim** - it is a port of the same name minimalist VSCode theme for neovim ([original repo](https://github.com/sobolevn/pustota)).
+A clean, minimalist Neovim colorscheme inspired by the original [pustota VSCode theme](https://github.com/sobolevn/pustota). Designed to keep you focused on writing code without visual distractions.
 
-![pustota](https://raw.githubusercontent.com/igor-gorohovsky/pustota.nvim/master/assets/minimal.png)
+--------------------------------------------------------------------------------
+![pustota.nvim screenshot](https://raw.githubusercontent.com/igor-gorohovsky/pustota.nvim/master/assets/minimal.png)
 
-## Supported Languages
-All languages supported, but tested only on:
-
-- Python
-- Rust
-- Elixir
-- Lua
-- Dockerfile
-- YAML
-- tbd...
-
-Experience may differ from original theme for other languages
+## Features
+- Distraction-free, minimalist aesthetic
+- Consistent and calm color palette
+- Treesitter-powered syntax highlighting
+- Great for Python, Rust, Elixir, Lua, Dockerfile, YAML, and more
+- Closely matches the original VSCode theme (behavior for untested languages may vary)
 
 ## Installation
-**Note: For correct appearance, a treesitter with highlighting enabled is required.**
+For the best experience, ensure you have Treesitter installed and highlighting enabled.  
+Example with [lazy.nvim]:
 
-lazy.nvim
 ```lua
-{ "igor-gorohovsky/pustota.nvim", version = "*", dependencies = {"nvim-treesitter/nvim-treesitter"} }
+{
+    "igor-gorohovsky/pustota.nvim",
+    version = "*",
+    dependencies = { "nvim-treesitter/nvim-treesitter" },
+},
 ```
 
 ## Configuration
-Recommended but not required `indent-blankline.nvim` config:
+Recommended (but optional) configuration with [indent-blankline.nvim]:
 
 ```lua
 return {
@@ -40,19 +39,23 @@ return {
             },
         },
         config = function(_, opts)
-            require("pustota").ibl_setup()
+            require("pustota").ibl_setup()  -- Optional built-in integration
             require("ibl").setup(opts)
         end,
     },
 }
-
 ```
 
 ## Usage
+Once installed, select it as your colorscheme:
+
 ```vim
 colorscheme pustota
 ```
+or in Lua:
 ```lua
 vim.cmd.colorscheme("pustota")
 ```
 
+--------------------------------------------------------------------------------
+Feel free to open an issue or pull request if you notice any missing highlights or inconsistencies. Happy coding!
