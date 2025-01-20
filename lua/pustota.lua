@@ -117,6 +117,9 @@ M.hl_langs = function()
 	hl(0, "@dot.elixir", { fg = colors.gray })
 	hl(0, "@constant.builtin.elixir", { link = "Constant" })
 	hl(0, "@string.special.elixir", { fg = colors.gray })
+
+	-- JSON specific
+	hl(0, "@property.json", { fg = colors.gray })
 end
 
 local highlight = function()

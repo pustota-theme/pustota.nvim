@@ -9,8 +9,17 @@ A clean, minimalist Neovim colorscheme inspired by the original [pustota VSCode 
 - Distraction-free, minimalist aesthetic
 - Consistent and calm color palette
 - Treesitter-powered syntax highlighting
-- Great for Python, Rust, Elixir, Lua, Dockerfile, YAML, and more
+- Great for Python, Rust, Elixir, Lua and more
 - Closely matches the original VSCode theme (behavior for untested languages may vary)
+
+## Tested languages
+- Python
+- Rust
+- Elixir
+- Lua
+- JSON
+- Dockerfile
+- YAML
 
 ## Installation
 For the best experience, ensure you have Treesitter installed and highlighting enabled.  
