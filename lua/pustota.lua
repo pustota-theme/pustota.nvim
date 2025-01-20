@@ -38,6 +38,7 @@ M.hl_base = function()
 	hl(0, "Repeat", { fg = colors.keywords_and_operators })
 	hl(0, "Statement", { fg = colors.keywords_and_operators })
 	hl(0, "Bracket", { fg = colors.gray })
+	hl(0, "PreProc", { fg = colors.gray })
 
 	hl(0, "Type", { fg = colors.type_definitions })
 
@@ -53,7 +54,7 @@ M.hl_langs = function()
 	hl(0, "@function.call", { fg = colors.gray })
 	hl(0, "@function.method.call", { fg = colors.gray })
 	hl(0, "@function.macro", { fg = colors.gray })
-	hl(0, "@constructor", { fg = colors.gray })
+	hl(0, "@constructor", {})
 
 	-- Treesitter brackets
 	hl(0, "@punctuation.bracket", { link = "Bracket" })
@@ -69,6 +70,7 @@ M.hl_langs = function()
 	-- Treesitter modules
 	hl(0, "@module", { fg = colors.gray })
 	hl(0, "@module.builtin", { fg = colors.gray })
+	hl(0, "@module.definition", { link = "Type" })
 
 	-- Treesitter const
 	hl(0, "@constant", { fg = colors.gray })
@@ -76,7 +78,7 @@ M.hl_langs = function()
 
 	-- Treesitter class
 	hl(0, "@type", { fg = colors.gray })
-	hl(0, "@type.definition", { fg = colors.gray })
+	hl(0, "@type.definition", { link = "Type" })
 
 	-- Treesitter string
 	hl(0, "@string.escape", { link = "String" })
@@ -91,14 +93,12 @@ M.hl_langs = function()
 
 	-- Python specific
 	hl(0, "@attribute.python", {})
-	hl(0, "@type.definition.python", { link = "Type" })
 	hl(0, "@NonePy.python", { link = "Constant" })
 
 	-- Rust specific
 	hl(0, "@keyword.modifier.rust", { fg = colors.gray })
 	hl(0, "@attribute.rust", { fg = colors.gray })
 	hl(0, "@punctuation.special.rust", { link = "Operator" })
-	hl(0, "@type.definition.rust", { link = "Type" })
 
 	-- Bash specific
 	hl(0, "@variable.parameter.bash", { link = "String" })
@@ -111,7 +111,6 @@ M.hl_langs = function()
 	hl(0, "@property.dockerfile", {})
 
 	-- Elixir specific
-	hl(0, "@module.definition.elixir", { link = "Type" })
 	hl(0, "@impl.keyword.elixir", { link = "Operator" })
 	hl(0, "@keyword.do.elixir", { link = "Operator" })
 	hl(0, "@dot.elixir", { fg = colors.gray })
@@ -120,6 +119,25 @@ M.hl_langs = function()
 
 	-- JSON specific
 	hl(0, "@property.json", { fg = colors.gray })
+
+	-- TS specific
+	hl(0, "@operator.decorator.typescript", { link = "Operator" })
+	hl(0, "@constructor.definition.typescript", { link = "Keyword" })
+
+	-- JS specific
+	hl(0, "@tag.delimiter.javascript", { link = "Operator" })
+	hl(0, "@tag.attribute.javascript", { link = "Function" })
+	hl(0, "@constructor.definition.javascript", { link = "Keyword" })
+
+	-- HTML specific
+	hl(0, "@tag.attribute.html", { link = "Function" })
+	hl(0, "@tag.delimiter.html", { link = "Operator" })
+	hl(0, "@markup.heading.html", { fg = colors.gray })
+	hl(0, "@markup.heading.1.html", { fg = colors.gray })
+	hl(0, "@markup.heading.2.html", { fg = colors.gray })
+	hl(0, "@markup.heading.3.html", { fg = colors.gray })
+	hl(0, "@markup.heading.4.html", { fg = colors.gray })
+	hl(0, "@markup.heading.5.html", { fg = colors.gray })
 end
 
 local highlight = function()
