@@ -1,0 +1,30 @@
+{
+  "title": "Neovim Theme Test",
+  "description": "A JSON file to test highlighting of different JSON constructs.",
+  "stringKey": "Hello, world!",
+  "escapeSequences": "Tabs\t, newlines\n, and quotes \"...\"",
+  "booleanTrue": true,
+  "booleanFalse": false,
+  "nullValue": null,
+  "integerNumber": 42,
+  "floatNumber": 3.14159,
+  "emptyArray": [],
+  "nonEmptyArray": [
+    "One",
+    "Two",
+    "Three",
+    {
+      "nestedObjectInArray": true
+    }
+  ],
+  "objectKey": {
+    "nestedString": "inside object",
+    "nestedBoolean": false,
+    "nestedNumber": 999,
+    "nestedArray": [
+      {
+        "deepObjectKey": "deepValue"
+      }
+    ]
+  }
+}
