@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>HTMX All-Features Demo</title>
+  <!-- Include htmx from CDN -->
+  <script src="https://unpkg.com/htmx.org@1.8.4"></script>
+  <!-- Optional: Example of a class-tools extension from htmx.org -->
+  <script src="https://unpkg.com/hyperscript.org"></script>
+</head>
+<body>
+
+  <h1>HTMX Feature Test</h1>
+  
+  <!-- Simple "get" request, loads content into #myContent -->
+  <button
+    hx-get="/load-content"
+    hx-target="#myContent"
+    hx-swap="innerHTML">
+    Load Content
+  </button>
+  
+  <!-- Placeholder div for loaded content -->
+  <div id="myContent">This content will be replaced</div>
+
+  <!-- A form posting data to /submit-form, result will go to #response -->
+  <form
+    hx-post="/submit-form"
+    hx-target="#response"
+    hx-swap="innerHTML">
+    <label for="username">Name:</label>
+    <input type="text" name="username" id="username">
+    <button type="submit">Submit</button>
+  </form>
+  
+  <!-- Displays server response from form submission -->
+  <div id="response"></div>
+
+  <!-- hx-boost allows standard links/forms to use AJAX instead of normal navigation -->
+  <div hx-boost="true">
+    <a href="/page2" hx-push-url="true">Go to Page 2 (Boosted)</a>
+  </div>
+
+  <!-- hx-confirm for user confirmation before the request -->
+  <button
+    hx-get="/confirmation"
+    hx-confirm="Are you sure you want to do this?"
+    hx-target="#myContent"
+    hx-swap="afterend">
+    Confirm Me
+  </button>
+
+  <!-- hx-indicator displays a loading element while request is processing -->
+  <button
+    hx-get="/indicator"
+    hx-indicator="#loadingIndicator"
+    hx-target="#response"
+    hx-swap="replace">
+    Load with Indicator
+  </button>
+
+  <!-- Hidden loading indicator (reveals while request is in-flight) -->
+  <div id="loadingIndicator" style="display: none;">Loading...</div>
+
+  <!-- Demonstration of hx-trigger; triggers the request on "change" instead of default "submit" -->
+  <form
+    hx-post="/complex-form"
+    hx-validate="true"
+    hx-trigger="change"
+    hx-target="#complexResult"
+    hx-swap="innerHTML">
+    <label>Field 1:</label>
+    <input type="text" name="field1" required>
+    <label>Field 2:</label>
+    <input type="text" name="field2"
+           hx-include="#field3"
+           hx-vals='{"extraParam":"1"}'>
+    <!-- A hidden field included in the request via hx-include -->
+    <input type="hidden" id="field3" name="field3" value="hiddenValue">
+    <button type="submit">Submit Complex</button>
+  </form>
+
+  <div id="complexResult"></div>
+
+  <!-- hx-select limits which part of the server response updates the DOM -->
+  <a href="/other-page"
+     hx-get="/other-page"
+     hx-select="#partial"
+     hx-swap="outerHTML"
+     hx-push-url="false">
+    Load Partial Content from /other-page
+  </a>
+
+  <div id="partial">
+    <p>This will be replaced by #partial content from /other-page</p>
+  </div>
+  
+  <!-- hx-headers can send custom headers with the request -->
+  <button
+    hx-get="/headers"
+    hx-headers='{"X-My-Header":"SomeValue"}'
+    hx-target="#response"
+    hx-swap="outerHTML">
+    Send Custom Header
+  </button>
+
+  <!-- Example of hx-put or hx-patch -->
+  <button
+    hx-put="/update-something"
+    hx-vals='{"update":"true"}'
+    hx-target="#response"
+    hx-swap="outerHTML">
+    Update Something (PUT)
+  </button>
+
+  <!-- hx-ext usage, combined with data attributes (this requires the appropriate extension) -->
+  <div
+    hx-ext="class-tools"
+    data-htmx-class-tools-add="animated fadeIn"
+    data-htmx-class-tools-toggle-on-success="text-green"
+    style="margin-top: 2em;">
+    Demonstration of an htmx extension (class-tools).
+  </div>
+
+  <!-- Example of a custom trigger specifying an event source (click from body) -->
+  <button
+    hx-get="/click"
+    hx-trigger="click from:body"
+    hx-swap="beforeend">
+    Click anywhere in body to trigger this GET
+  </button>
+
+  <!-- hx-preserve to keep certain elements from being replaced or removed -->
+  <div hx-preserve>
+    <h2>This content is preserved upon partial updates</h2>
+  </div>
+
+</body>
+</html>

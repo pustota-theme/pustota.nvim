@@ -1,0 +1,125 @@
+$primary-color: #3B5998;
+$secondary-color: #FF0000;
+
+// Mixins
+@mixin center-block($width) {
+  margin-left: auto;
+  margin-right: auto;
+  width: $width;
+}
+
+@mixin box-shadow($x: 0, $y: 0, $blur: 5px, $color: rgba(0, 0, 0, 0.3)) {
+  box-shadow: $x $y $blur $color;
+}
+
+@mixin custom-gradient($start-color, $end-color) {
+  background: $start-color;
+  background: linear-gradient(to bottom, $start-color, $end-color);
+}
+
+@mixin transition($props...) {
+  transition: $props;
+}
+
+@mixin breakpoint($break) {
+  @if $break == small {
+    @media (max-width: 600px) {
+      @content;
+    }
+  } @else if $break == medium {
+    @media (max-width: 900px) {
+      @content;
+    }
+  } @else if $break == large {
+    @media (max-width: 1200px) {
+      @content;
+    }
+  }
+}
+
+// Placeholder selector
+%clearfix {
+  &::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+// Body styling
+body {
+  font-family: sans-serif;
+  color: $primary-color;
+  @include box-shadow(0, 5px, 10px, rgba(0, 0, 0, 0.2));
+
+  // Example of nested rules
+  h1 {
+    @extend %clearfix;
+    font-size: 2em;
+    margin-bottom: 20px;
+  }
+
+  p {
+    color: $secondary-color;
+    &:hover {
+      color: darken($secondary-color, 10%);
+    }
+  }
+
+  // Container with gradient, breakpoint usage
+  .container {
+    @include center-block(80%);
+    @include custom-gradient($primary-color, lighten($primary-color, 20%));
+    @include transition(all 0.3s ease-in-out);
+    padding: 20px;
+
+    @include breakpoint(medium) {
+      padding: 10px;
+    }
+  }
+
+  // Navigation
+  nav {
+    ul {
+      list-style: none;
+
+      li {
+        float: left;
+        margin-right: 10px;
+      }
+
+      @include breakpoint(small) {
+        text-align: center;
+
+        li {
+          float: none;
+          display: inline-block;
+          margin-right: 0;
+        }
+      }
+    }
+  }
+}
+
+// Another mixin usage
+@mixin fancy-text($text-color, $font-size: 16px) {
+  color: $text-color;
+  font-size: $font-size;
+  font-weight: bold;
+}
+
+// Footer section with placeholder extension
+.footer {
+  @include fancy-text(darken($primary-color, 20%), 14px);
+  padding: 15px;
+
+  .links {
+    a {
+      color: lighten($primary-color, 10%);
+      text-decoration: none;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
