@@ -138,6 +138,22 @@ M.hl_langs = function()
 	hl(0, "@markup.heading.3.html", { fg = colors.gray })
 	hl(0, "@markup.heading.4.html", { fg = colors.gray })
 	hl(0, "@markup.heading.5.html", { fg = colors.gray })
+	hl(0, "@markup.link.label.html", { fg = colors.gray })
+
+	-- CSS specific
+	hl(0, "@property.css", { fg = colors.gray })
+	hl(0, "@function.css", { fg = colors.gray })
+
+	hl(0, "@attribute.css", { link = "Function" })
+	hl(0, "@tag.attribute.css", { link = "Function" })
+	hl(0, "@constant.css", { link = "Function" })
+	hl(0, "@tag.css", { link = "Type" })
+	hl(0, "@color.css", { link = "Constant" })
+	hl(0, "@unit.css", { link = "Keyword" })
+
+	hl(0, "@type.css", { link = "Function" })
+	hl(0, "@type.delimiter.css", { link = "Function" })
+	hl(0, "@punctuation.delimiter.css", {})
 end
 
 local highlight = function()
