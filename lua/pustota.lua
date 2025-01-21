@@ -154,6 +154,11 @@ M.hl_langs = function()
 	hl(0, "@type.css", { link = "Function" })
 	hl(0, "@type.delimiter.css", { link = "Function" })
 	hl(0, "@punctuation.delimiter.css", {})
+
+	-- C specific
+	hl(0, "@property.c", { fg = colors.gray })
+	hl(0, "@label.c", { fg = colors.gray })
+	hl(0, "@operator.dot.c", { fg = colors.gray })
 end
 
 local highlight = function()
