@@ -155,6 +155,11 @@ M.hl_langs = function()
 	hl(0, "@type.delimiter.css", { link = "Function" })
 	hl(0, "@punctuation.delimiter.css", {})
 
+	-- Java specific
+	hl(0, "@constructor.java", { link = "Function" })
+	hl(0, "@operator.decorator.java", { link = "Operator" })
+	hl(0, "@operator.access.java", { fg = colors.gray })
+
 	-- C# specific
 	hl(0, "@module.c_sharp", { link = "Type" })
 	hl(0, "@property.c_sharp", { fg = colors.gray })
