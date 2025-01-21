@@ -154,6 +154,11 @@ M.hl_langs = function()
 	hl(0, "@type.css", { link = "Function" })
 	hl(0, "@type.delimiter.css", { link = "Function" })
 	hl(0, "@punctuation.delimiter.css", {})
+
+	-- Java specific
+	hl(0, "@constructor.java", { link = "Function" })
+	hl(0, "@operator.decorator.java", { link = "Operator" })
+	hl(0, "@operator.access.java", { fg = colors.gray })
 end
 
 local highlight = function()
