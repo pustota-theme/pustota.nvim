@@ -1,0 +1,330 @@
+/* ------------------------- *\
+   1. Root and variables
+\* ------------------------- */
+
+:root {
+  --main-bg-color: #f0f0f0;
+  --accent-color: #cc3399;
+  --default-padding: 1rem;
+  --transition-speed: 0.3s;
+}
+
+/* Using theming variables */
+body {
+  background: var(--main-bg-color);
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+/* ------------------------- *\
+   2. Basic selectors
+\* ------------------------- */
+
+h1,
+h2,
+h3 {
+  margin: var(--default-padding) 0;
+  color: var(--accent-color);
+}
+
+/* ID selector */
+#main-heading {
+  text-transform: uppercase;
+}
+
+/* Class selector */
+.highlight {
+  background-color: #ffffcc;
+  border-left: 4px solid #ffcc00;
+  padding: var(--default-padding);
+}
+
+/* Element selector */
+p {
+  line-height: 1.5;
+  margin-bottom: 1em;
+  text-align: justify;
+}
+
+/* ------------------------- *\
+   3. Combinators
+\* ------------------------- */
+
+/* Descendant combinator */
+article p {
+  font-size: 1rem;
+}
+
+/* Child combinator */
+ul > li {
+  list-style-type: square;
+  margin-left: 2rem;
+}
+
+/* Adjacent sibling combinator */
+h2 + p {
+  font-style: italic;
+}
+
+/* General sibling combinator */
+h2 ~ p {
+  color: #666;
+}
+
+/* ------------------------- *\
+   4. Attribute selectors
+\* ------------------------- */
+
+input[type="text"] {
+  border: 1px solid #ccc;
+  padding: 0.5rem;
+}
+
+input[type="radio"]:checked {
+  accent-color: var(--accent-color);
+}
+
+/* ------------------------- *\
+   5. Pseudo-classes
+\* ------------------------- */
+
+a:hover {
+  color: var(--accent-color);
+  text-decoration: underline;
+}
+
+a:focus {
+  outline: 2px solid var(--accent-color);
+}
+
+button:active {
+  opacity: 0.6;
+}
+
+/* nth-child examples */
+li:nth-child(odd) {
+  background: #f9f9f9;
+}
+
+li:nth-child(even) {
+  background: #e9e9e9;
+}
+
+/* Form pseudo-class */
+input:required {
+  border: 2px dashed #f66;
+}
+
+/* ------------------------- *\
+   6. Pseudo-elements
+\* ------------------------- */
+
+p::first-line {
+  font-weight: bold;
+}
+
+blockquote::before {
+  content: "“";
+  font-size: 2rem;
+  vertical-align: sub;
+}
+
+blockquote::after {
+  content: "”";
+  font-size: 2rem;
+  vertical-align: sub;
+}
+
+/* Using ::selection (not standard in all browsers) */
+::selection {
+  background: var(--accent-color);
+  color: #fff;
+}
+
+/* ------------------------- *\
+   7. Positioning & display
+\* ------------------------- */
+
+.container {
+  position: relative;
+  width: 80%;
+  margin: 0 auto;
+  padding: var(--default-padding);
+  border: 1px solid #ddd;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.container .box {
+  width: 30%;
+  margin-bottom: var(--default-padding);
+  background: #fafafa;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Z-index test */
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: rgba(51, 51, 51, 0.8);
+  width: 100%;
+  height: 100%;
+  z-index: 999;
+}
+
+/* Float example */
+.sidebar {
+  float: right;
+  width: 25%;
+  background: #eee;
+  padding: var(--default-padding);
+}
+
+/* Clear fix */
+.clearfix::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* ------------------------- *\
+   8. Transforms & transitions
+\* ------------------------- */
+
+.transform-test {
+  display: inline-block;
+  transition: transform var(--transition-speed) ease-in-out;
+  background: #ddd;
+  padding: 0.5rem;
+}
+
+.transform-test:hover {
+  transform: scale(1.2) rotate(5deg);
+}
+
+/* ------------------------- *\
+   9. Keyframes & animations
+\* ------------------------- */
+
+@keyframes bounce {
+  0% {
+    transform: translateY(0);
+  }
+  20% {
+    transform: translateY(-10px);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.bouncing-element {
+  animation: bounce 2s infinite;
+}
+
+/* ------------------------- *\
+   10. Media queries
+\* ------------------------- */
+
+@media (max-width: 600px) {
+  .container {
+    flex-direction: column;
+  }
+  .container .box {
+    width: 100%;
+  }
+}
+
+/* ------------------------- *\
+   11. @supports example
+\* ------------------------- */
+
+/*
+  This checks if the browser supports CSS grid.
+  If it does, we apply grid-based styling.
+*/
+@supports (display: grid) {
+  .grid-container {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 1rem;
+  }
+}
+
+/* ------------------------- *\
+   12. Vendor prefixes (example)
+\* ------------------------- */
+
+.box {
+  /* Old vendor prefixes for illustration only */
+  -webkit-border-radius: 6px;
+          border-radius: 6px;
+
+  -webkit-transition: all var(--transition-speed);
+     -moz-transition: all var(--transition-speed);
+       -o-transition: all var(--transition-speed);
+          transition: all var(--transition-speed);
+}
+
+/* ------------------------- *\
+   13. @page and print test
+\* ------------------------- */
+
+@page {
+  margin: 1cm;
+}
+
+@media print {
+  body {
+    font-size: 12pt;
+    color: #000;
+  }
+  .no-print {
+    display: none;
+  }
+}
+
+/* ------------------------- *\
+   14. (Non-standard) @document
+\* ------------------------- */
+
+/* Note: @document is non-standard and only supported in Firefox */
+/*
+@-moz-document url-prefix("https://example.com") {
+  .firefox-only {
+    color: blue;
+  }
+}
+*/
+
+/* ------------------------- *\
+   15. Additional classes
+\* ------------------------- */
+
+/* Example of multiple classes on a single element */
+.multiple.classes.example {
+  background: #ccc;
+  border: 1px solid #999;
+}
+
+/* Additional test for other partial states */
+.disabled {
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+.error {
+  color: #c00;
+}
+
+.success {
+  color: #0c0;
+}
