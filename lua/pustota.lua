@@ -159,6 +159,23 @@ M.hl_langs = function()
 	hl(0, "@constructor.java", { link = "Function" })
 	hl(0, "@operator.decorator.java", { link = "Operator" })
 	hl(0, "@operator.access.java", { fg = colors.gray })
+
+	-- C# specific
+	hl(0, "@module.c_sharp", { link = "Type" })
+	hl(0, "@property.c_sharp", { fg = colors.gray })
+	hl(0, "@constructor.c_sharp", { link = "Function" })
+	hl(0, "@constant.builtin.c_sharp", { link = "Constant" })
+	hl(0, "@function.question", { fg = colors.gray })
+
+	-- C++ specific
+	hl(0, "@property.cpp", { fg = colors.gray })
+	hl(0, "@operator.dot.cpp", { fg = colors.gray })
+
+	-- C specific
+	hl(0, "@property.c", { fg = colors.gray })
+	hl(0, "@label.c", { fg = colors.gray })
+	hl(0, "@operator.dot.c", { fg = colors.gray })
+
 end
 
 local highlight = function()
