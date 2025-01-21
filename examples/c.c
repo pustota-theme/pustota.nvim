@@ -22,7 +22,7 @@ const char *GLOBAL_MSG = "Hello, Global!";
 /*-----------------------------------------------------
  * Typedef, Enums, Struct, Union
  *-----------------------------------------------------*/
-typedef unsigned long ULong;
+typedef unsigned long ULong; 
 
 enum Color {
     RED = 1,

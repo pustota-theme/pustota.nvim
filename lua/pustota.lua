@@ -158,6 +158,11 @@ M.hl_langs = function()
 	-- C++ specific
 	hl(0, "@property.cpp", { fg = colors.gray })
 	hl(0, "@operator.dot.cpp", { fg = colors.gray })
+
+	-- C specific
+	hl(0, "@property.c", { fg = colors.gray })
+	hl(0, "@label.c", { fg = colors.gray })
+	hl(0, "@operator.dot.c", { fg = colors.gray })
 end
 
 local highlight = function()
