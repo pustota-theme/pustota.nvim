@@ -154,6 +154,13 @@ M.hl_langs = function()
 	hl(0, "@type.css", { link = "Function" })
 	hl(0, "@type.delimiter.css", { link = "Function" })
 	hl(0, "@punctuation.delimiter.css", {})
+
+	-- C# specific
+	hl(0, "@module.c_sharp", { link = "Type" })
+	hl(0, "@property.c_sharp", { fg = colors.gray })
+	hl(0, "@constructor.c_sharp", { link = "Function" })
+	hl(0, "@constant.builtin.c_sharp", { link = "Constant" })
+	hl(0, "@function.question", { fg = colors.gray })
 end
 
 local highlight = function()
