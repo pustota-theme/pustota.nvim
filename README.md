@@ -31,7 +31,7 @@ Example with [lazy.nvim]:
 
 ```lua
 {
-    "igor-gorohovsky/pustota.nvim",
+    "pustota-theme/pustota.nvim",
     version = "*",
     dependencies = { "nvim-treesitter/nvim-treesitter" },
 },
