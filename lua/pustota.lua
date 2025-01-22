@@ -179,6 +179,10 @@ M.hl_langs = function()
 	-- TOML specific
 	hl(0, "@property.toml", { fg = colors.gray })
 	hl(0, "@string.special.toml", { link = "String" })
+
+	-- Ruby specific
+	hl(0, "@function.builtin.ruby", { link = "Keyword" })
+	hl(0, "@string.special.symbol.ruby", { link = "String" })
 end
 
 local highlight = function()
