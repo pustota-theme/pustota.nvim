@@ -176,6 +176,9 @@ M.hl_langs = function()
 	hl(0, "@label.c", { fg = colors.gray })
 	hl(0, "@operator.dot.c", { fg = colors.gray })
 
+	-- TOML specific
+	hl(0, "@property.toml", { fg = colors.gray })
+	hl(0, "@string.special.toml", { link = "String" })
 end
 
 local highlight = function()

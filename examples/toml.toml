@@ -1,0 +1,65 @@
+# This is a single-line comment
+## This is another comment
+
+# Basic key-value pairs
+title = "TOML Example"
+number = 42
+pi_value = 3.14159
+bool_true = true
+bool_false = false
+escaped_string = "Line 1\nLine 2"
+
+# Multiline string
+multi_line_text = """
+This is a multiline
+string in TOML
+"""
+
+# Literal string
+literal_string = '''No escaping here... \n This will not create a new line!'''
+
+# Dates and Times
+some_date = 2020-10-20
+some_time = 07:32:00
+some_datetime = 1979-05-27T07:32:00-08:00
+
+# Arrays
+number_array = [1, 2, 3, 4]
+string_array = ["foo", "bar", "baz"]
+
+# Inline table
+inline_table = { foo = "bar", number = 123 }
+
+# A standard table
+[database]
+server = "192.168.1.1"
+ports = [8001, 8002]
+connection_max = 5000
+enabled = true
+
+# Sub-table
+[database.settings]
+backup_enabled = true
+backup_path = "/var/backups"
+
+# Another top-level table
+[owner]
+name = "Tom Preston-Werner"
+organization = "GitHub"
+bio = "GitHub Cofounder & CEO\nLikes tater tots and beer."
+dob = 1979-05-27T07:32:00-08:00
+
+# Array of tables
+[[products]]
+name = "Hammer"
+sku = 738594937
+
+[[products]]
+name = "Nail"
+sku = 284758393
+color = "gray"
+
+[[products]]
+name = "Screw"
+sku = 347285029
+color = "silver"
