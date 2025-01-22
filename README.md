@@ -18,11 +18,12 @@ A clean, minimalist Neovim colorscheme inspired by the original [pustota VSCode 
 - JS/JSX
 - HTML
 - CSS
-- Java
-- C#
-- Rust
-- C++
 - C
+- C++
+- C#
+- Java
+- Ruby
+- Rust
 - Elixir
 - Lua
 - JSON
