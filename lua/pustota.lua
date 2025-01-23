@@ -195,6 +195,23 @@ M.hl_langs = function()
 
 	-- Solidity specific
 	hl(0, "@constructor.solidity", { link = "Keyword" })
+
+	-- SCSS specific
+	hl(0, "@property.scss", { fg = colors.gray })
+	hl(0, "@function.scss", { fg = colors.gray })
+	hl(0, "@function.definition.scss", { link = "Function" })
+	hl(0, "@string.scss", { fg = colors.gray })
+
+	hl(0, "@attribute.scss", { link = "Function" })
+	hl(0, "@tag.attribute.scss", { link = "Function" })
+	hl(0, "@constant.scss", { link = "Function" })
+	hl(0, "@tag.scss", { link = "Type" })
+	hl(0, "@color.scss", { link = "Constant" })
+	hl(0, "@unit.scss", { link = "Keyword" })
+
+	hl(0, "@type.scss", { link = "Function" })
+	hl(0, "@type.delimiter.scss", { link = "Function" })
+	hl(0, "@punctuation.delimiter.scss", {})
 end
 
 local highlight = function()
