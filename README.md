@@ -14,6 +14,7 @@ A clean, minimalist Neovim colorscheme inspired by the original [pustota VSCode 
 
 ## Tested languages
 - Python
+- Go
 - TS/TSX
 - JS/JSX
 - HTML
