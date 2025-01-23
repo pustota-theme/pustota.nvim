@@ -20,6 +20,7 @@ A clean, minimalist Neovim colorscheme inspired by the original [pustota VSCode 
 - HTML
 - PHP
 - CSS
+- SCSS
 - C
 - C++
 - C#
