@@ -186,6 +186,9 @@ M.hl_langs = function()
 
 	-- PHP specific
 	hl(0, "@property.php", { fg = colors.gray })
+
+	-- Go specific
+	hl(0, "@property.go", { fg = colors.gray })
 end
 
 local highlight = function()
