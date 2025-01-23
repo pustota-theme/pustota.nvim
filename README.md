@@ -33,6 +33,7 @@ A clean, minimalist Neovim colorscheme inspired by the original [pustota VSCode 
 - Dockerfile
 - YAML
 - TOML
+- Bash
 
 ## Installation
 For the best experience, ensure you have Treesitter installed and highlighting enabled.  
