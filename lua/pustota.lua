@@ -189,6 +189,9 @@ M.hl_langs = function()
 
 	-- Go specific
 	hl(0, "@property.go", { fg = colors.gray })
+
+	-- Dart specific
+	hl(0, "@property.dart", { fg = colors.gray })
 end
 
 local highlight = function()
