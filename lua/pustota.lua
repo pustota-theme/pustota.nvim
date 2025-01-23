@@ -192,6 +192,9 @@ M.hl_langs = function()
 
 	-- Dart specific
 	hl(0, "@property.dart", { fg = colors.gray })
+
+	-- Solidity specific
+	hl(0, "@constructor.solidity", { link = "Keyword" })
 end
 
 local highlight = function()
