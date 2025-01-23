@@ -183,6 +183,9 @@ M.hl_langs = function()
 	-- Ruby specific
 	hl(0, "@function.builtin.ruby", { link = "Keyword" })
 	hl(0, "@string.special.symbol.ruby", { link = "String" })
+
+	-- PHP specific
+	hl(0, "@property.php", { fg = colors.gray })
 end
 
 local highlight = function()
