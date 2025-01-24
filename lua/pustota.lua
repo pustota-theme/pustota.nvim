@@ -212,6 +212,9 @@ M.hl_langs = function()
 	hl(0, "@type.scss", { link = "Function" })
 	hl(0, "@type.delimiter.scss", { link = "Function" })
 	hl(0, "@punctuation.delimiter.scss", {})
+
+	-- Bash specific
+	hl(0, "@variable.parameter.bash", { fg = colors.gray })
 end
 
 local highlight = function()
