@@ -215,6 +215,7 @@ M.hl_langs = function()
 
 	-- Bash specific
 	hl(0, "@variable.parameter.bash", { fg = colors.gray })
+	hl(0, "@keyword.import.bash", { fg = colors.gray })
 end
 
 local highlight = function()
