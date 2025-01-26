@@ -31,6 +31,7 @@ A clean, minimalist Neovim colorscheme inspired by the original [pustota VSCode 
 - Erlang
 - Elixir
 - Clojure
+- Haskell
 - Lua
 - Solidity
 - JSON
