@@ -1,0 +1,87 @@
+# This YAML file demonstrates various YAML features.
+
+# Top-level document start
+---
+# Explicit type tags, multiline scalars (literal and folded), sequences, mappings, anchors, merges, etc.
+
+# Example of an anchor (&) and alias (*)
+common_settings: &common
+  version: 1.0
+  enabled: true
+  lists:
+    - item1
+    - item2
+    - item3
+
+# Using the alias to merge into another mapping
+merged_settings:
+  <<: *common
+  additional_setting: "some_value"
+
+# Example of a second anchor and alias
+default_values: &defaults
+  name: "John Doe"
+  role: "Developer"
+  email: "john.doe@example.com"
+
+# Merged multiple anchors: merges from "common" and "defaults"
+merged_user:
+  <<: [*common, *defaults]
+  details:
+    age: 30
+    location: "Remote"
+
+# Explicit tags (yaml.org schema examples)
+explicit_tag_examples:
+  boolean_true: !!bool "true"
+  boolean_false: !!bool "false"
+  integer: !!int "42"
+  float: !!float "3.14159"
+  string: !!str "Explicit string"
+  null_value: !!null ""
+  binary_example: !!binary |
+    R0lGODlhAQABAIAAAP///////ywAAAAAAQABAAACAkQBADs=
+
+# Demonstrating different block scalars
+block_scalars:
+  literal_block: | 
+    This text
+    will preserve
+    line breaks
+    exactly.
+  folded_block: >
+    This text
+    is folded into
+    a single paragraph
+    with line breaks replaced by spaces.
+    Blank lines, however, are used to start new paragraphs.
+
+# Example of flow style for sequences and mappings
+flow_style_example:
+  flow_sequence: [apple, banana, cherry]
+  flow_mapping: { name: "Jane Doe", occupation: "Engineer", active: true }
+
+# Sequences containing mappings
+users:
+  - name: "Alice"
+    role: "Designer"
+    status: active
+  - name: "Bob"
+    role: "Tester"
+    status: inactive
+
+# Demonstrating special characters in keys
+"special~chars@key": "This is valid"
+
+# Empty mappings and sequences
+empty_map: {}
+empty_list: []
+
+# Multidocument structure: a second document starts here
+...
+# New document
+---
+another_document:
+  note: "This is the second YAML document"
+
+# End of file (optional)

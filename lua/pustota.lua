@@ -107,7 +107,8 @@ M.hl_langs = function()
 	hl(0, "@property.dockerfile", {})
 
 	-- Yaml specific
-	hl(0, "@property.yaml", { link = "Keyword" })
+	hl(0, "@property.yaml", { fg = colors.gray })
+	hl(0, "@label.yaml", { fg = colors.gray })
 	hl(0, "@property.dockerfile", {})
 
 	-- Elixir specific
