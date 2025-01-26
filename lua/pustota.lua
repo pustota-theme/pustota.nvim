@@ -226,7 +226,8 @@ M.hl_langs = function()
 	hl(0, "@function.method.clojure", { fg = colors.gray })
 
 	-- Haskell specific
-	hl(0, "@operator.colon.colon.haskell", { fg = colors.gray })
+	hl(0, "@operator.gray.haskell", { fg = colors.gray })
+	hl(0, "@keyword.directive", { fg = colors.gray })
 end
 
 local highlight = function()

@@ -1,7 +1,6 @@
 ;; extends
 
-
-((header module: (module) @type.definition))
+((header module: (module (module_id)) @type.definition) (#set! priority 120))
 
 ((data_type name: (name) @type.definition))
 
@@ -13,4 +12,7 @@
 
 ((class name: (name) @type.definition))
 
-(("::") @operator.colon.colon)
+[
+ "::"
+ "."
+] @operator.gray
