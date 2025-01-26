@@ -220,7 +220,10 @@ M.hl_langs = function()
 	-- Erlang specific
 	hl(0, "@function.erlang", { fg = colors.gray })
 	hl(0, "@function.definition.erlang", { link = "Function" })
-	hl(0, "@operator.colon", { fg = colors.gray })
+	hl(0, "@operator.colon.erlang", { fg = colors.gray })
+
+	-- Clojure specific
+	hl(0, "@function.method.clojure", { fg = colors.gray })
 end
 
 local highlight = function()
