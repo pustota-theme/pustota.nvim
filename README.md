@@ -26,6 +26,7 @@ A clean, minimalist Neovim colorscheme inspired by the original [pustota VSCode 
 - C#
 - Java
 - Scala
+- Kotlin
 - Ruby
 - Dart
 - Rust
