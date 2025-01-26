@@ -28,6 +28,7 @@ A clean, minimalist Neovim colorscheme inspired by the original [pustota VSCode 
 - Ruby
 - Dart
 - Rust
+- Erlang
 - Elixir
 - Lua
 - Solidity
