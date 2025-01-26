@@ -216,6 +216,11 @@ M.hl_langs = function()
 	-- Bash specific
 	hl(0, "@variable.parameter.bash", { fg = colors.gray })
 	hl(0, "@keyword.import.bash", { fg = colors.gray })
+
+	-- Erlang specific
+	hl(0, "@function.erlang", { fg = colors.gray })
+	hl(0, "@function.definition.erlang", { link = "Function" })
+	hl(0, "@operator.colon", { fg = colors.gray })
 end
 
 local highlight = function()
