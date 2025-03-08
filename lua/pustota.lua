@@ -81,6 +81,7 @@ M.hl_langs = function()
 	-- Python specific
 	hl(0, "@attribute.python", {})
 	hl(0, "@NonePy.python", { link = "Constant" })
+	hl(0, "@assertpy", { link = "Operator" })
 
 	-- Rust specific
 	hl(0, "@keyword.modifier.rust", { fg = colors.gray })
