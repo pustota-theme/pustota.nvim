@@ -60,6 +60,16 @@ Example with [lazy.nvim]:
 ```
 
 ## Configuration
+
+**Important:** For the best experience with this colorscheme, disable semantic highlighting from your LSP by adding this to your LSP `on_attach` function:
+
+```lua
+config.on_attach = function(client, bufnr)
+    client.server_capabilities.semanticTokensProvider = nil
+    -- your other on_attach logic here
+end
+```
+
 Recommended (but optional) configuration with [indent-blankline.nvim]:
 
 ```lua
