@@ -31,6 +31,7 @@ M.hl_base = function()
 
 	hl(0, "Visual", { bg = colors.visual })
 	hl(0, "Indent", { fg = colors.indent })
+    hl(0, "MsgArea", { bg = colors.bottom })
 end
 
 M.hl_langs = function()
@@ -235,5 +236,6 @@ end
 local ibl_setup = function()
 	vim.api.nvim_set_hl(0, "Indent", { fg = "#000000" })
 end
+
 
 return { colorscheme = colorscheme, ibl_setup = ibl_setup }
