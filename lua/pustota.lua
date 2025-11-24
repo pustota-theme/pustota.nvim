@@ -36,6 +36,7 @@ end
 
 M.hl_langs = function()
 	-- Custom
+    hl(0, "@lsp", { fg = colors.gray })
 	hl(0, "@interpolation", { fg = colors.gray })
 
 	-- Treesitter Functions
@@ -83,6 +84,12 @@ M.hl_langs = function()
 	hl(0, "@attribute.python", {})
 	hl(0, "@NonePy.python", { link = "Constant" })
 	hl(0, "@assertpy", { link = "Operator" })
+	hl(0, "@lsp.type.typeParameter.python", {})
+    hl(0, "@lsp.type.method.python", {})
+    hl(0, "@lsp.type.function.python", {})
+    hl(0, "@lsp.mod.definition.python", { link = "Function" })
+    hl(0, "@lsp.typemod.method.definition.python", { link = "Function" })
+    hl(0, "@lsp.type.decorator.python", {})
 
 	-- Rust specific
 	hl(0, "@keyword.modifier.rust", { fg = colors.gray })
