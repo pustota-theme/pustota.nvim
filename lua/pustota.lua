@@ -95,6 +95,13 @@ M.hl_langs = function()
 	hl(0, "@keyword.modifier.rust", { fg = colors.gray })
 	hl(0, "@attribute.rust", { fg = colors.gray })
 	hl(0, "@punctuation.special.rust", { link = "Operator" })
+    hl(0, "rustModPathSep", { fg = colors.gray } )
+    hl(0, "rustType", { fg = colors.gray })
+    hl(0, "rustIdentifier", { link = "Type" })
+    hl(0, "rustFuncCall", { fg = colors.gray })
+    hl(0, "rustSigil", { link = "Operator" })
+    hl(0, "rustSelf", { fg = colors.gray })
+    hl(0, "rustStorage", { link = "Keyword" })
 
 	-- Bash specific
 	hl(0, "@variable.parameter.bash", { link = "String" })
