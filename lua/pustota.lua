@@ -36,7 +36,7 @@ end
 
 M.hl_langs = function()
 	-- Custom
-    hl(0, "@lsp", { fg = colors.gray })
+    hl(0, "@lsp", {})
 	hl(0, "@interpolation", { fg = colors.gray })
 
 	-- Treesitter Functions
@@ -87,7 +87,7 @@ M.hl_langs = function()
 	hl(0, "@lsp.type.typeParameter.python", {})
     hl(0, "@lsp.type.method.python", {})
     hl(0, "@lsp.type.function.python", {})
-    hl(0, "@lsp.mod.definition.python", { link = "Function" })
+    hl(0, "@lsp.mod.definition.python", {})
     hl(0, "@lsp.typemod.method.definition.python", { link = "Function" })
     hl(0, "@lsp.type.decorator.python", {})
 
