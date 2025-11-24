@@ -47,6 +47,10 @@ A clean, minimalist Neovim colorscheme inspired by the original [pustota VSCode 
 - lualine.nvim
 - tbd...
 
+## Requirements
+- Neovim 0.10+
+- nvim-treesitter
+
 ## Installation
 For the best experience, ensure you have Treesitter installed and highlighting enabled.  
 Example with [lazy.nvim]:
