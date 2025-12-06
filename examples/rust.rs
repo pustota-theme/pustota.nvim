@@ -1,11 +1,39 @@
 #![allow(dead_code)]
 #![allow(unused_imports)]
+#![allow(unused_variables)]
+#![allow(unused_mut)]
 
 use std::collections::HashMap;
 use std::fmt;
+use std::future::Future;
+use std::pin::Pin;
+
+// Extern block for C FFI
+extern "C" {
+    fn abs(input: i32) -> i32;
+}
+
+// Extern function definition
+pub extern "C" fn callable_from_c(x: i32) -> i32 {
+    x * 2
+}
+
+// Visibility modifiers
+pub mod visibility_examples {
+    pub struct PublicStruct {
+        pub public_field: i32,
+        pub(crate) crate_visible: i32,
+        pub(super) parent_visible: i32,
+        private_field: i32,
+    }
+
+    pub(crate) fn crate_visible_function() {}
+    pub(super) fn parent_visible_function() {}
+    pub fn public_function() {}
+}
 
 // Enums and Pattern Matching
-enum Message {
+pub enum Message {
     Quit,
     Move { x: i32, y: i32 },
     Write(String),
@@ -74,7 +102,71 @@ fn iterator_example() {
     assert_eq!(sum, 12);
 }
 
+// Async function
+async fn fetch_data() -> String {
+    String::from("async data")
+}
+
+// Async function with return type
+pub async fn async_operation(input: i32) -> Result<i32, String> {
+    Ok(input * 2)
+}
+
+// Unsafe function
+unsafe fn dangerous_operation() {
+    // Unsafe code here
+}
+
+// Function with unsafe block
+fn safe_wrapper() {
+    unsafe {
+        dangerous_operation();
+    }
+}
+
+// Static mut (requires unsafe to access)
+static mut COUNTER: i32 = 0;
+
+// Unsafe trait
+unsafe trait UnsafeTrait {
+    fn unsafe_method(&self);
+}
+
+unsafe impl UnsafeTrait for Point {
+    fn unsafe_method(&self) {}
+}
+
 fn main() {
+    // Mutable variables
+    let mut counter = 0;
+    counter += 1;
+
+    let mut mutable_string = String::from("hello");
+    mutable_string.push_str(" world");
+
+    // Mutable reference
+    let mut value = 42;
+    let mutable_ref: &mut i32 = &mut value;
+    *mutable_ref += 1;
+
+    // Ref pattern in match
+    let reference = &42;
+    match reference {
+        ref r => println!("Got a reference: {:?}", r),
+    }
+
+    // Ref mut pattern
+    let mut mutable_value = 10;
+    match mutable_value {
+        ref mut m => {
+            *m += 5;
+        }
+    }
+
+    // Ref in let binding
+    let ref immutable_ref = 100;
+    let ref mut mutable_binding = 200;
+
     // Basic Types and Ownership
     let s1 = String::from("hello");
     let s2 = s1.clone();
@@ -150,5 +242,21 @@ fn main() {
     match divide(10, 2) {
         Ok(result) => println!("Result: {}", result),
         Err(e) => println!("Error: {}", e),
+    }
+
+    // Unsafe block examples
+    unsafe {
+        // Access static mut
+        COUNTER += 1;
+        println!("Counter: {}", COUNTER);
+
+        // Call extern function
+        let result = abs(-5);
+        println!("Absolute value: {}", result);
+
+        // Raw pointer operations
+        let mut num = 5;
+        let raw_ptr = &mut num as *mut i32;
+        *raw_ptr = 10;
     }
 }
