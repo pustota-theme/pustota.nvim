@@ -92,7 +92,7 @@ M.hl_langs = function()
     hl(0, "@lsp.type.decorator.python", {})
 
 	-- Rust specific
-	hl(0, "@keyword.modifier.rust", { fg = colors.gray })
+	hl(0, "@keyword.modifier.rust", { fg = colors.keywords_and_operators })
 	hl(0, "@attribute.rust", { fg = colors.gray })
 	hl(0, "@punctuation.special.rust", { link = "Operator" })
     hl(0, "rustModPathSep", { fg = colors.gray } )
