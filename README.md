@@ -52,10 +52,19 @@ A clean, minimalist Neovim colorscheme inspired by the original [pustota VSCode 
 - nvim-treesitter
 
 ## Installation
-For the best experience, ensure you have Treesitter installed and highlighting enabled.  
-Example with [lazy.nvim]:
+
+**Important:** This colorscheme relies on Treesitter for syntax highlighting. Make sure you have [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter) installed with `highlight` enabled.
+
+Example with [lazy.nvim](https://github.com/folke/lazy.nvim):
 
 ```lua
+{
+    "nvim-treesitter/nvim-treesitter",
+    build = ":TSUpdate",
+    opts = {
+        highlight = { enabled = true },
+    },
+},
 {
     "pustota-theme/pustota.nvim",
     version = "*",
