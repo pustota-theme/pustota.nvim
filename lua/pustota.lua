@@ -31,7 +31,15 @@ M.hl_base = function()
 
 	hl(0, "Visual", { bg = colors.visual })
 	hl(0, "Indent", { fg = colors.indent })
+	hl(0, "MiniIndentscopeSymbol", { fg = colors.indent })
     hl(0, "MsgArea", { bg = colors.bottom })
+
+	hl(0, "DiffAdd", { bg = "#0F2204" })
+	hl(0, "DiffChange", { bg = "#0F2204" })
+	hl(0, "DiffDelete", { bg = "#310903", fg = "#4B1105" })
+	hl(0, "DiffText", { bg = "#1A3C0D" })
+	hl(0, "DiffAddLn", { fg = "#62B84F", bg = "#0F2204" })
+	hl(0, "DiffDeleteLn", { fg = "#C85952", bg = "#310903" })
 end
 
 M.hl_langs = function()
