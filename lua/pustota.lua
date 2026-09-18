@@ -249,6 +249,9 @@ local highlight = function()
 end
 
 local colorscheme = function()
+	-- Dark-only theme: pin 'background' so Neovim's built-in highlight
+	-- defaults (CursorLine, Folded, ...) don't follow a light terminal.
+	vim.o.background = "dark"
 	vim.api.nvim_command("hi clear")
 	vim.o.termguicolors = true
 	vim.g.colors_name = "pustota"
